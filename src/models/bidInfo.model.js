@@ -12,7 +12,7 @@ const bidInfo = {
     },
     findHighestBid: (propertyId) => {
         return db.query(
-            'SELECT * FROM bidInfo WHERE propertyId = ? ORDER BY bidAmount DESC LIMIT 1',
+            'SELECT * FROM bidinfo WHERE propertyId = ? ORDER BY bidAmount DESC LIMIT 1',
             [propertyId]
         );
     },
