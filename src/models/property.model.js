@@ -45,7 +45,7 @@ const Property = {
 
     if (title) {
       const modifiedTitle = title.replace(/\+/g, ' ');
-      query += "AND title = ?";
+      query += " AND title = ?";
       queryParams.push(modifiedTitle);
     }
     if (location) {
@@ -63,7 +63,7 @@ const Property = {
       query += " AND price <= ?";
       queryParams.push(minPrice);
     }
-
+    console.log(query, queryParams);
     return db.query(query, queryParams);
   }
 };
