@@ -1,4 +1,4 @@
-const bidInfo = require("../../models/BidInfo.model");
+const bidInfo = require("../../models/bidInfo.model");
 const Property = require("../../models/property.model");
 
 // Create 
