@@ -18,7 +18,7 @@ const userRegister = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     await User.create(name, email, hashedPassword, user.role);
 
-    res.status(201).json({ message: 'User registered successfully', data: user });
+    res.status(201).json({ message: 'created', data: user });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -33,13 +33,21 @@ const userLogin = async (req, res) => {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
 
+    
     const isMatch = await bcrypt.compare(password, user[0].password);
     if (!isMatch) {
       return res.status(400).json({ message: 'Incorrect password' });
     }
 
     const token = jwt.sign({ id: user[0].id, role: user[0].role }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    res.status(200).json({message:"login successfully", token });
+    const data = {
+      id: user[0].id,
+      name: user[0].name,
+      email: user[0].email,
+      role: user[0].role,
+      token
+    }
+    res.status(200).json({message:"success", data });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
