@@ -1,7 +1,6 @@
 const Property = require('../../models/property.model');
 const fs = require('fs');
 const path = require('path');
-const bidInfo = require('../../models/BidInfo.model');
 
 // Create a new property
 const createProperty = async (req, res) => {
