@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const userRouter = require('./routes/user/user.routers');
 const PropertyRouter = require('./routes/property/property.routers');
-const bidRouter = require('./routes/BidInfo/bidInfo.routers');
+const bidRouter = require('./routes/bidInfo/bidInfo.routers');
 
 
 // Middleware

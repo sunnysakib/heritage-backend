@@ -1,5 +1,4 @@
 const express = require('express');
-const { authenticateToken } = require('../../middlewares/authMiddleware');
 const multer = require('multer');
 const path = require('path');
 const { createProperty, getPropertiesByUserId, updateProperty, deleteProperty, addBid, getProperties, getPropertyById, getPropertiesFilter } = require('./property.controller');
